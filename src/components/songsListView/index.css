@@ -1,0 +1,117 @@
+.songs-list-view-container{
+    flex-grow: 2;
+    opacity: 1;
+    transition: opacity 1s;
+    @starting-style{
+        opacity: 0;
+    }
+}
+
+.tracks-container{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 32px;
+}
+.track-selector{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: #ffffff;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.track-selector h2{
+    font-size: 24px;
+}
+.active-track{
+    opacity: 1;
+}
+.search-bar-container{
+    padding: 0;
+    /* width: 300px; */
+    border: none;
+}
+.input-container{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    align-items: stretch;
+    background-color: rgb(255, 255, 255, 8%);
+    border-radius: 8px;
+}
+.search-bar{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 8px 16px;
+    outline: none;
+    color: #ffffff;
+}
+.search-bar::placeholder{
+    color: #ffffff;
+    opacity: 0.6;
+}
+.search-label{
+    width: 32px;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    opacity: 60%;
+    padding-right: 24px;
+}
+.search-label img{
+    object-fit: contain;
+}
+@media (max-width:992px) {
+    .songs-list-view-container{
+        height: 0;
+        /* overflow: hidden; */
+        /* display: none; */
+        position: absolute;
+        width: 100%;
+        max-width: 480px;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 90vh;
+        overflow-y: scroll;
+        background-color: black;
+        border-radius: 8px;
+        padding-block:20px !important;
+    }
+    .songs-list{
+        height: 100%;
+    }
+    .tracks-container{
+        padding-left: 20px;
+    }
+    .player{
+        justify-self: center;
+        margin: auto;
+    }
+}
+
+
+::-webkit-scrollbar {
+    width: 1px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+    border: 3px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}

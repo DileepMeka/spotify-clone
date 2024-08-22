@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inter;
+}
+
+.body{
+    /* background-image: linear-gradient(30deg,#201606,#000000); */
+    background: 
+    linear-gradient(0deg, #000000, #000000),
+    linear-gradient(108.18deg, rgba(51, 66, 94, 0.6) 2.46%, rgba(0, 0, 0, 0.6) 99.84%);
+    min-height: 100vh;
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10%;
+    position: relative;
+    /* color: rgba(51, 66, 94, 0.6); */
+}
+
+
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    --s: 20px;
+    
+    --_d: calc(0.353*var(--s));
+    width: calc(var(--s) + var(--_d));
+    height: calc(var(--s) + var(--_d));
+    aspect-ratio: 1;
+    display: grid;
+}
+.loader:before,
+.loader:after {
+    content: "";
+    grid-area: 1/1;
+    clip-path: polygon(var(--_d) 0,100% 0,100% calc(100% - var(--_d)),calc(100% - var(--_d)) 100%,0 100%,0 var(--_d));
+    background:conic-gradient(from -90deg at calc(100% - var(--_d)) var(--_d),#fff 135deg,#666 0 270deg,#aaa 0);
+    animation: l6 2s infinite;
+}
+.loader:after {
+    animation-delay:-1s;
+}
+@keyframes l6{
+    0%  {transform:translate(0,0)}
+    25% {transform:translate(30px,0)}
+    50% {transform:translate(30px,30px)}
+    75% {transform:translate(0,30px)}
+    100%{transform:translate(0,0)}
+}
+.failure-container{
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.failure-container h1{
+    font-size: 24px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+.failure-container button{
+    background-color: rgba(255, 255, 255, 8%);
+    color: #fff;
+    opacity: 90%;
+    padding: 8px 16px;
+    border: 1px solid;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+@media (max-width:768px) {
+    .body{
+        padding: 20px;
+    }
+    .person{
+        bottom: -5%;
+    }
+}

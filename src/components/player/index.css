@@ -1,0 +1,72 @@
+.player{
+    /* flex-grow: 3; */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    justify-self: center;
+    gap: 32px;
+}
+.player-song-name{
+    font-size: 32px;
+    line-height: 32px;
+}
+.player-artist-name{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.player-cover-img-container{
+    width: 100%;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 1/1;
+    gap: 24px;
+}
+.player-cover-img-container img{
+    width: 100%;
+    max-width: 480px;
+    max-height: 480px;
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+input[type="range"]{
+    accent-color: #ffffff50;
+}
+.controllers-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.controllers-container{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+.controllers-section button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.icon{
+    width: 20px;
+}
+.btn{
+    
+    background-color: rgba(255, 255, 255, 10%) !important;
+    padding: 14px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+}
+@media (max-width:1200px) {
+    .player,.songs-list-view-container{
+        padding-block:100px ;
+    }
+}

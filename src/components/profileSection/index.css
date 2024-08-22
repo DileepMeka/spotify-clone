@@ -1,0 +1,32 @@
+.logo-container{
+    height: 40px;
+    width: 133px;
+}
+.logo{
+    width: 100%;
+}
+.profile-img-container{
+    width: 48px;
+    aspect-ratio: 1/1;
+}
+.person{
+    width: 100%;
+}
+.profile-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* flex-grow: 1; */
+}
+@media (max-width:1200px) {
+    .profile-section{
+        position: absolute;
+        height: 90%;
+        pointer-events: none;
+    }
+    .person{
+        position: absolute;
+        bottom: 10;
+        width: 48px;
+    }
+}
