@@ -151,11 +151,15 @@ class Player extends Component {
                     const ActivePrevSong = () => {
                         const index = currentSongsList.indexOf(activeSong);
                         console.log(index);
-                    
+                        
                         if (index === 0) {  
                             console.log(currentSongsList[currentSongsList.length - 1]);  
                             changeActiveSong(currentSongsList[currentSongsList.length - 1]);
-                        } else {
+                        }
+                        else if(index==-1){
+                            changeActiveSong(currentSongsList[0]);
+                        }
+                        else {
                             console.log(index - 1);  
                             changeActiveSong(currentSongsList[index - 1]);
                         }
