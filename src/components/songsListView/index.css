@@ -95,6 +95,12 @@
     }
 }
 
+@media (hover: none) and (pointer: coarse) {
+    .songs-list-view-container {
+      height: 80vh; 
+    }
+  }
+  
 
 ::-webkit-scrollbar {
     width: 1px;
