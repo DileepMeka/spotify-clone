@@ -2,6 +2,9 @@ import { Component } from "react";
 
 import songsContext from "../../context/songsContext";
 
+import { MdCancel } from "react-icons/md";
+
+
 import "./index.css"
 import SongsList from "../songsList";
 
@@ -29,6 +32,15 @@ class SongsListView extends Component{
         })
     }
     
+    toggleSongsListView = ()=>{
+        const songsListView = document.getElementById("songsListView")
+        if(songsListView.style.display === "none"){
+            songsListView.style.display = "block"
+        }
+        else{
+            songsListView.style.display = "none"
+        }
+    }
     
     render(){
         const {activeTrack, searchWord} = this.state
@@ -45,6 +57,9 @@ class SongsListView extends Component{
                                 </button>
                                 <button onClick={()=>this.changeActiveTrack(tracks.topTracks)} className={`track-selector ${activeTrack===tracks.topTracks ? "active-track" : ""}`}>
                                     <h2>Top Tracks</h2>
+                                </button>
+                                <button onClick={this.toggleSongsListView} className="track-selector">
+                                    <MdCancel />
                                 </button>
                             </div>
                             <div className="search-bar-container">
